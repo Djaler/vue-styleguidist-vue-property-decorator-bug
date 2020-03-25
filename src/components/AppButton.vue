@@ -6,17 +6,10 @@
 
 <script lang="ts">
 import sizeMixin from './sizeMixin'
-import Component, { mixins } from 'vue-class-component'
+import { Component, Mixins, Prop } from 'vue-property-decorator'
 
 @Component({
 	props: {
-		/**
-		 * Sets the button font color
-		 */
-		color: {
-			type: String,
-			default: null
-		},
 		/** Sets background color of the button
 		 * @since 1.2.0
 		 */
@@ -28,8 +21,12 @@ import Component, { mixins } from 'vue-class-component'
 		oldColor: String
 	}
 })
-export default class AppButton extends mixins(sizeMixin) {
+export default class AppButton extends Mixins(sizeMixin) {
 	size?: number
+    /**
+     * Sets the button font color
+     */
+    @Prop({type: String, default: null})
 	color?: string|null
 	background?: string
 	oldColor?: string
