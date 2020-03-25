@@ -15,7 +15,7 @@ import Component, { mixins } from 'vue-class-component'
 		 */
 		color: {
 			type: String,
-			default: 'black'
+			default: null
 		},
 		/** Sets background color of the button
 		 * @since 1.2.0
@@ -30,7 +30,7 @@ import Component, { mixins } from 'vue-class-component'
 })
 export default class AppButton extends mixins(sizeMixin) {
 	size?: number
-	color?: string
+	color?: string|null
 	background?: string
 	oldColor?: string
 	get styles() {
