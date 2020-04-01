@@ -28,6 +28,8 @@ export default class AppButton extends Mixins(sizeMixin) {
      */
     @Prop({type: String, default: null})
 	color?: string|null
+    @Prop({type: Array, default: ()=>[]})
+    someArray!: string[];
 	background?: string
 	oldColor?: string
 	get styles() {
